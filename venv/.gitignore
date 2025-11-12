@@ -1,0 +1,18 @@
+
+
+# Ignore virtual environment and cache
+venv/
+__pycache__/
+*.pyc
+
+# Ignore local files
+applied_jobs.csv
+logs.txt
+
+# Ignore secret environment files
+.env
+
+# System / editor files
+.DS_Store
+.idea/
+.vscode/

@@ -5,10 +5,8 @@ import csv
 import datetime
 
 
-# Load environment variables
 load_dotenv()
 
-# Create OpenAI client
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 def generate_cover_letter(job_title, company_name, skills):
@@ -17,9 +15,9 @@ def generate_cover_letter(job_title, company_name, skills):
     Highlight the following skills: {', '.join(skills)}.
     Keep it short — 4 to 5 sentences maximum.
     """
-
+ 
     response = client.chat.completions.create(
-        model="gpt-5",  # ✅ use your GPT-5 access here
+        model="gpt-5",
         messages=[
             {"role": "user", "content": prompt}
         ]

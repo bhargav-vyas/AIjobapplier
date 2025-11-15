@@ -1,0 +1,12 @@
+2025-11-15 17:55:28,625 - INFO - NumExpr defaulting to 12 threads.
+2025-11-15 17:59:50,674 - INFO - API called — Applying for Python Developer in pune
+2025-11-15 17:59:50,676 - INFO - ====== WebDriver manager ======
+2025-11-15 17:59:52,710 - INFO - Get LATEST chromedriver version for google-chrome
+2025-11-15 17:59:52,883 - INFO - Get LATEST chromedriver version for google-chrome
+2025-11-15 17:59:53,001 - INFO - Get LATEST chromedriver version for google-chrome
+2025-11-15 17:59:53,349 - INFO - WebDriver version 142.0.7444.162 selected
+2025-11-15 17:59:53,356 - INFO - Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/142.0.7444.162/win32/chromedriver-win32.zip
+2025-11-15 17:59:53,357 - INFO - About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/142.0.7444.162/win32/chromedriver-win32.zip
+2025-11-15 17:59:53,403 - INFO - Driver downloading response is 200
+2025-11-15 17:59:55,173 - INFO - Get LATEST chromedriver version for google-chrome
+2025-11-15 17:59:56,369 - INFO - Driver has been saved in cache [C:\Users\vyasb\.wdm\drivers\chromedriver\win64\142.0.7444.162]

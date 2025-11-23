@@ -8,31 +8,48 @@ import pandas as pd
 
 router = APIRouter()
 
+# ⭐ NEW MODEL with job_count + experience
 class JobRequest(BaseModel):
     job_title: str
     location: str
     resume_path: str
+    job_count: int
+    experience: int
+
 
 @router.post("/apply-job")
 def apply_job(req: JobRequest):
-    logger.info(f"API called — Applying for {req.job_title} in {req.location}")
+    logger.info(
+        f"API called — Applying for '{req.job_title}' in '{req.location}', "
+        f"Experience: {req.experience} years, Jobs to apply: {req.job_count}"
+    )
+
     try:
-        run_job_application(req.job_title, req.location, req.resume_path)
-        return {"status": "success", "message": "Job application started!"}
+        run_job_application(
+            req.job_title,
+            req.location,
+            req.resume_path,
+            req.job_count,
+            req.experience
+        )
+        return {
+            "status": "success",
+            "message": "JobPilot AI started applying to the jobs!"
+        }
+
     except Exception as e:
         logger.error(f"Error applying job: {e}")
         return {"status": "error", "message": str(e)}
+
 
 @router.get("/logs")
 def get_logs():
     try:
         log_dir = os.path.join(os.getcwd(), "logs")
 
-        # If logs folder doesn't exist
         if not os.path.exists(log_dir):
             return {"status": "no_logs"}
 
-        # Load log files
         files = sorted(glob.glob(os.path.join(log_dir, "*.log")), reverse=True)
 
         if not files:
@@ -47,6 +64,7 @@ def get_logs():
 
     except Exception as e:
         return {"status": "error", "message": str(e)}
+
 
 @router.get("/applied-jobs")
 def applied_jobs():

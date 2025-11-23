@@ -88,6 +88,10 @@ def run_job_application(job_title, location, resume_path):
         email = os.getenv("NAUKRI_EMAIL")
         password = os.getenv("NAUKRI_PASSWORD")
 
+        # 🔥 DEBUG PRINTS — verify .env is loading
+        print("DEBUG EMAIL:", email)
+        print("DEBUG PASSWORD:", password)
+
         naukri_auto_apply(email, password, resume_path, job_title, location)
 
     except Exception as e:
